@@ -1,0 +1,14 @@
+[Unit]
+Description=Start MQTT Clock
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python -u /home/pi/mqtt_clock.py
+WorkingDirectory=/home/pi
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
