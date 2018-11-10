@@ -39,8 +39,6 @@ void loop() {
     }
     
     drawClock();
-    
-    Particle.process();
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -63,7 +61,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
         meteorRain(0x0,0x00,0xff,10, 64, true, 20);
     }
     else{
-        Colours(100);
         Strobe(0x33, 0x33, 0x33, 5, 500, 20);
     }
         
@@ -92,9 +89,6 @@ void drawClock(){
 	}
 	
 	showStrip();
-	
-	
-    
 	Particle.process();
 }
 
@@ -133,8 +127,6 @@ void Colours(int SpeedDelay){
     strip.show();
     delay(SpeedDelay);
   }
-    
-    Particle.process();
 }
 
 uint32_t Wheel(byte WheelPos) {
@@ -173,8 +165,6 @@ void meteorRain(byte red, byte green, byte blue, byte meteorSize, byte meteorTra
     showStrip();
     delay(SpeedDelay);
   }
-  
-  Particle.process();
 }
 
 void Strobe(byte red, byte green, byte blue, int StrobeCount, int FlashDelay, int EndPause){
